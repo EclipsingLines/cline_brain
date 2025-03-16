@@ -2,8 +2,19 @@
 
 This memory bank system enables AI assistants to maintain persistent context for complex projects. It provides structured documentation that's critical for understanding project architecture, design decisions, and current development state.
 
-After each conversation reset or new session, the AI assistant will **RELY COMPLETELY** on this Memory Bank to understand the project and continue effective assistance. The assistant **MUST READ ALL** memory bank files at the start of **EACH NEW TASK** without exception. The assistant should also perform **initial validation checks** (e.g., verifying file access, confirming project structure) to identify potential issues before proceeding with any work.
+## Objectives  
+- Maintain project continuity across sessions.  
+- Prioritize **incremental improvements** over large-scale refactoring.  
+- Ensure **systems function effectively** with minimal disruption.  
 
+## AI Assistant Guidelines  
+1. **Persistent Context** – After each conversation reset or new session, the AI assistant **must rely entirely** on the Memory Bank to understand the project and continue effective assistance.  
+2. **Mandatory Pre-Task Review** – At the start of **each new task**, the AI assistant **must**:  
+   - **Read all Memory Bank files** without exception.  
+   - **Validate project structure** (e.g., verify file access, confirm dependencies).  
+   - **Identify potential issues** before proceeding with any work.  
+
+This structured approach ensures the AI assistant operates with full awareness of the project's history, constraints, and objectives at all times.  
 ---
 
 ## **Git Workflow Rules – With Recovery**

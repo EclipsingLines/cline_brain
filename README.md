@@ -1,6 +1,6 @@
 # Cline Memory Bank Templates
 
-This repository contains a collection of Memory Bank templates designed to enhance AI assistant interactions, particularly with Cline (Claude). These structured documentation templates enable AI assistants to maintain persistent context across conversations, leading to more effective assistance for complex software projects.
+This repository contains a collection of Memory Bank templates designed to enhance AI assistant interactions, particularly with Cline (Claude). These structured documentation templates enable AI assistants to maintain persistent context across conversations, leading to more effective assistance for complex software projects. 
 
 ## What is a Memory Bank?
 
