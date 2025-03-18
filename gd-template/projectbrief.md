@@ -1,28 +1,32 @@
 # Project Brief: [Project Name]
 
 ## Core Mission
-[Project Name] is a [brief one-sentence description of what the project is and does].
+[Project Name] is a Godot 4 game about [elevator pitch of the game, what is it about, 3 or 4 lines].
 
 ## Key Requirements
 
-1. **Functionality**
-   - [List key functional requirements]
-   - [Be specific and measurable when possible]
-   - [Focus on what the system must do]
+1. Platforms
+   [List key functional requirements]
+	- Windows
+	- Linux
+	- MacOS 
+	- Android
+	- iOS 
+	- HTML5 
 
 2. **Performance**
    - [List performance requirements]
    - [Include metrics and benchmarks]
-   - [Consider response times, throughput, resource usage]
+   - [Consider response times, latency, FPS]
 
 3. **Security & Compliance**
-   - [List security requirements]
-   - [Include compliance standards if applicable]
+   - [List security requirements | for most games these will be handled by distribution platforms]
+   - [Include compliance standards to all expected release platforms if applicable]
    - [Consider authentication, authorization, data protection]
 
 4. **User Experience**
    - [List UX requirements]
-   - [Consider accessibility needs]
+   - [Consider accessibility needs for different platforms]
    - [Include key user journeys]
 
 ## Project Scope

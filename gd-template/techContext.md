@@ -3,10 +3,10 @@
 ## Technology Stack
 
 ### Core Technologies
-1. [Primary Language/Platform]
-   - Version: [X.Y]+
-   - Key frameworks/libraries
-   - Core functionality provided
+1. Go (version [X.Y]+)
+   - Primary implementation language
+   - Standard library utilization
+   - Go modules for dependency management
 
 2. [Secondary Technology]
    - [Purpose in the project]
@@ -21,28 +21,34 @@
 ### Dependencies
 
 1. [Key Dependency 1]
+   ```go
+   [import path]
+   ```
    - [Purpose in the project]
    - [Specific features used]
    - [Version constraints]
-   - [License considerations]
 
 2. [Key Dependency 2]
+   ```go
+   [import path]
+   ```
    - [Purpose in the project]
    - [Specific features used]
    - [Version constraints]
-   - [License considerations]
 
 3. [Key Dependency 3]
+   ```go
+   [import path]
+   ```
    - [Purpose in the project]
    - [Specific features used]
    - [Version constraints]
-   - [License considerations]
 
 ## Development Setup
 
 ### Prerequisites
 1. Development Tools
-   - [Language/Platform] [version]
+   - Go [version]
    - [Tool 1]
    - [Tool 2]
    - [Tool 3]
@@ -51,8 +57,8 @@
 2. Environment Setup
    ```bash
    # Install required tools
-   [Command to install tool 1]
-   [Command to install tool 2]
+   go install [tool1]@[version]
+   go install [tool2]@[version]
    
    # Setup environment variables
    export [ENV_VAR1]=[value1]
@@ -63,63 +69,67 @@
    cd [project directory]
    
    # Initialize dependencies
-   [Command to install dependencies]
+   go mod download
    ```
 
 ### Build Process
 1. Building the Application
    ```bash
-   [Build command]
+   go build -o [output name] [main file path]
    ```
 
 2. Running Tests
    ```bash
-   # Run all tests
-   [Test command]
+   # Run tests with default verbosity
+   go test ./...
    
-   # Run specific test suite
-   [Specific test command]
+   # Run tests with verbose output
+   go test -v ./...
    
-   # Generate test coverage report
-   [Coverage command]
+   # Run tests with coverage
+   go test -cover ./...
+   
+   # Generate coverage report
+   go test -coverprofile=coverage.out ./...
+   go tool cover -html=coverage.out
    ```
 
-3. Build Scripts/Automation
+3. Makefile Options (if applicable)
    ```bash
    # Build the application
-   [Build script command]
+   make build
    
    # Run tests
-   [Test script command]
+   make test
    
    # Clean build artifacts
-   [Clean script command]
+   make clean
    
    # Build and run
-   [Run script command]
+   make run
    
    # Generate documentation
-   [Documentation script command]
+   make docs
    ```
 
 ## Deployment
 
 ### Container Deployment
-1. Container Structure
+1. Dockerfile Structure
    ```
    project/
-   ├── [Container definition file]
-   ├── [Container ignore file]
-   └── [Container compose file] (if applicable)
+   ├── Dockerfile
+   ├── .dockerignore
+   └── docker-compose.yml (if applicable)
    ```
 
 2. Image Building
    ```bash
    # Build container image
-   [Command to build container]
+   docker build -t [image name]:[tag] .
    
    # Run container locally
-   [Command to run container]
+   docker run -p [host port]:[container port] [image name]:[tag]
    ```
 
 3. Container Registry
@@ -129,12 +139,12 @@
 
 ### Cloud Deployment
 1. [Cloud Provider]
-   - Service: [Service name]
+   - Service: [Service name (e.g., GKE, ECS, App Engine)]
    - Region: [Primary deployment region]
    - Configuration: [Key configuration details]
 
 2. Infrastructure as Code
-   - Tool: [IaC tool name]
+   - Tool: [e.g., Terraform, Pulumi, CloudFormation]
    - Repository: [Repository location]
    - Apply process: [Process details]
 
@@ -173,33 +183,46 @@
 
 1. Code Organization
    ```
-   [Project-specific directory structure]
+   ├── cmd/                   # Command-line applications
+   │   └── [app name]/        # Main application entry point
+   │       └── main.go        # Application entrypoint
+   ├── pkg/                   # Public library packages
+   │   ├── [component 1]/     # Component 1 implementation
+   │   └── [component 2]/     # Component 2 implementation
+   ├── internal/              # Private implementation packages
+   │   ├── [component 3]/     # Internal component 1
+   │   └── [component 4]/     # Internal component 2
+   ├── api/                   # API definitions (proto files, OpenAPI specs)
+   ├── web/                   # Web assets (if applicable)
+   ├── configs/               # Configuration files
+   ├── scripts/               # Helper scripts
+   └── test/                  # Integration and end-to-end tests
    ```
 
 2. Logging and Telemetry
-   - Logging library/framework: [name]
+   - Logging library: [library name]
    - Log format: [format details]
    - Log levels: [debug, info, warn, error, etc.]
    - Telemetry solution: [solution name if applicable]
 
 3. Testing Strategy
-   - Unit testing approach
-   - Integration testing approach
-   - End-to-end testing approach
-   - Performance testing approach
+   - Unit tests for all packages
+   - Integration tests for component interaction
+   - End-to-end tests for critical flows
+   - Performance testing for key operations
    - Testing tools and libraries:
      * [Tool/library 1]
      * [Tool/library 2]
 
 4. Documentation
-   - API documentation: [tool/approach]
+   - API documentation: [godoc, custom solution, etc.]
    - Architecture documentation: [location/format]
    - Operation guides: [location/format]
    - Developer guides: [location/format]
 
 5. Configuration Management
-   - Configuration format: [format]
+   - Configuration format: [YAML, JSON, TOML, etc.]
    - Environment variable usage
    - Default configuration values
    - Configuration validation approach
-   - Secrets management approach
+   - Secrets management
