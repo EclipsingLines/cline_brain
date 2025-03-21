@@ -1,6 +1,6 @@
-# Go Project Memory Bank Templates
+# Godot Project Memory Bank Templates
 
-This directory contains template files for setting up a structured Memory Bank for Go projects. These templates provide a standardized way to document project context, technical decisions, and progress tracking.
+This directory contains template files for setting up a structured Memory Bank for Godot game development projects. These templates provide a standardized way to document project context, technical decisions, and progress tracking.
 
 ## Overview
 
@@ -8,25 +8,35 @@ The Memory Bank structure follows a hierarchical approach where files build upon
 
 ## Memory Bank Files
 
+### Core Files (Required)
+
 1. **`prompt.md`** - The main memory bank prompt that explains the structure and Git workflow rules
-2. **`.clinerules`** - Go-specific project rules, styling guidelines, and best practices
+2. **`.clinerules`** - Godot-specific project rules, styling guidelines, and best practices
 3. **`projectbrief.md`** - Core requirements, goals, and project scope
 4. **`productContext.md`** - Purpose, problems solved, and expected behavior
-5. **`systemPatterns.md`** - Architecture, technical decisions, and Go design patterns
+5. **`systemPatterns.md`** - Architecture, technical decisions, and Godot design patterns
 6. **`techContext.md`** - Technology stack, dependencies, and deployment details
 7. **`activeContext.md`** - Current focus, recent changes, and next steps
 8. **`progress.md`** - Tracks completed work, in-progress features, and planned roadmap
 
+### Reference Files (Optional but Recommended)
+
+9. **`gdscript_guidelines.md`** - Detailed guidelines for GDScript coding standards
+10. **`godot_best_practices.md`** - Best practices for Godot game development
+11. **`godot_resources.md`** - Curated list of Godot documentation resources
+
 ## How to Use These Templates
 
 1. **Create Project Directory**:
+
    ```bash
-   mkdir -p my-go-project/memory-bank
+   mkdir -p my-godot-project/memory-bank
    ```
 
 2. **Copy Templates**:
+
    ```bash
-   cp go-template/* my-go-project/memory-bank/
+   cp gd-template/* my-godot-project/memory-bank/
    ```
 
 3. **Customize Templates**:
@@ -53,6 +63,10 @@ flowchart TD
     TC --> AC
     
     AC --> P[progress.md]
+    
+    PB -.-> GG[gdscript_guidelines.md]
+    PB -.-> GB[godot_best_practices.md]
+    PB -.-> GR[godot_resources.md]
 ```
 
 ## Best Practices
@@ -66,10 +80,11 @@ flowchart TD
    - Include concrete examples and implementation details
    - Link to specific code files when applicable
 
-3. **Follow Go Best Practices**:
-   - Adhere to the Go code styling rules in `.clinerules`
-   - Document exported functions, types, and packages
-   - Maintain clear package structures as outlined in `systemPatterns.md`
+3. **Follow Godot Best Practices**:
+   - Adhere to the GDScript styling rules in `.clinerules`
+   - Document exported variables, signals, and public functions
+   - Maintain clear scene and node structures as outlined in `systemPatterns.md`
+   - Reference `gdscript_guidelines.md` and `godot_best_practices.md` for detailed guidance
 
 4. **Track Progress Diligently**:
    - Keep `progress.md` up to date with completed features
@@ -87,5 +102,14 @@ flowchart TD
 - Fill in technical details in `systemPatterns.md` and `techContext.md`
 - Use `activeContext.md` as a living document for current focus areas
 - Update `progress.md` as features are completed or new ones are planned
+- Reference the Godot-specific guidelines and best practices when implementing solutions
 
-By maintaining these memory bank files, you'll create a comprehensive knowledge base that helps both developers and AI assistants understand and contribute to your Go project more effectively.
+## Godot-Specific Considerations
+
+- **Scene Organization**: Document your scene hierarchy and composition strategy
+- **Node Structure**: Maintain clear documentation on node relationships and responsibilities
+- **Resource Management**: Document your approach to resource loading and management
+- **Signal Patterns**: Document signal connections and event-driven architecture
+- **State Management**: Document game state handling and transitions
+
+By maintaining these memory bank files, you'll create a comprehensive knowledge base that helps both developers and AI assistants understand and contribute to your Godot game project more effectively.

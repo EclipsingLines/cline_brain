@@ -1,12 +1,13 @@
 # Cline Memory Bank Templates
 
-This repository contains a collection of Memory Bank templates designed to enhance AI assistant interactions, particularly with Cline (Claude). These structured documentation templates enable AI assistants to maintain persistent context across conversations, leading to more effective assistance for complex software projects. 
+This repository contains a collection of Memory Bank templates designed to enhance AI assistant interactions, particularly with Cline (Claude). These structured documentation templates enable AI assistants to maintain persistent context across conversations, leading to more effective assistance for complex software projects.
 
 ## What is a Memory Bank?
 
 A Memory Bank is a structured set of documentation files that serves as a persistent knowledge base for AI assistants. After each conversation reset or new session, the assistant reads these files to regain context about your project.
 
 Key benefits:
+
 - **Persistent Context**: AI assistants can maintain project knowledge across sessions
 - **Structured Information**: Organized documentation helps the assistant understand project architecture, goals, and progress
 - **Efficient Collaboration**: Reduces repetitive explanations and increases productive work
@@ -14,19 +15,31 @@ Key benefits:
 
 ## Template Collections
 
-This repository includes two template collections:
+This repository includes three template collections:
 
 ### 1. Go Project Templates (`go-template/`)
 
 Specialized templates for Go projects with:
+
 - Go-specific best practices and coding standards
 - Standard Go project structure guidance
 - Error handling patterns for Go development
 - Documentation patterns for Go packages and functions
 
-### 2. Standard Project Templates (`standard/`)
+### 2. Godot Project Templates (`gd-template/`)
+
+Specialized templates for Godot game development projects with:
+
+- GDScript coding standards and best practices
+- Godot-specific architecture and design patterns
+- Scene organization and node structure guidelines
+- Resource management and signal patterns
+- Additional reference files for Godot development
+
+### 3. Standard Project Templates (`standard/`)
 
 Language-agnostic templates for any software project:
+
 - Generic coding standards applicable to any language
 - Flexible project organization principles
 - Universal documentation patterns
@@ -58,21 +71,33 @@ flowchart TD
 7. **`activeContext.md`** - Current focus, recent changes, and next steps
 8. **`progress.md`** - Feature progress tracking and roadmap
 
+The Godot templates also include additional reference files:
+
+- **`gdscript_guidelines.md`** - Detailed guidelines for GDScript coding standards
+- **`godot_best_practices.md`** - Best practices for Godot game development
+- **`godot_resources.md`** - Curated list of Godot documentation resources
+
 ## How to Use These Templates
 
 1. **Choose a Template Set**:
    - Select `go-template/` for Go projects
+   - Select `gd-template/` for Godot game development projects
    - Select `standard/` for other projects
 
 2. **Create Project Directory**:
+
    ```bash
    mkdir -p my-project/memory-bank
    ```
 
 3. **Copy Templates**:
+
    ```bash
    # For Go projects
    cp go-template/* my-project/memory-bank/
+   
+   # For Godot projects
+   cp gd-template/* my-project/memory-bank/
    
    # For other projects
    cp standard/* my-project/memory-bank/
@@ -98,6 +123,7 @@ flowchart TD
 ## Public Use and Contributions
 
 This repository is provided for public use. Feel free to:
+
 - Fork and adapt these templates for your own projects
 - Create your own specialized templates for different languages or frameworks
 - Share improvements or additional template collections

@@ -1,66 +1,79 @@
 ## Project Intelligence
 
-### Go Code Styling Rules
-- main.go should be minimal, serving only as entrypoint
-- All packages under ./pkg/ directory
-- Keep files under 300 lines by splitting into multiple files
-- Group small utility functions in util.go within each package
-- Each exported function requires detailed documentation comments
-- Run go fmt ./... before committing code
+### GDScript Styling Rules
+
+- Follow the official GDScript style guide
+- Use tabs for indentation (not spaces)
+- Use snake_case for functions, variables, and signals
+- Use PascalCase for classes and nodes
+- Order class members: tool, class_name, extends, signals, enums/constants, exported variables, public variables, private variables, onready variables, methods
+- Keep functions short and focused on a single task
+- Use descriptive variable and function names
+- Add type hints to function parameters and return values
+- Document all exported variables, signals, and public functions
 - Make frequent, small git commits while coding to create recovery points
-- Use git checkout [commit-hash] -- path/to/file.go to recover accidentally deleted code
-- Group imports in three blocks: standard library, external deps, internal packages
-- Break up large packages into multiple files with clear responsibilities
 
 ### Project Structure
+
 - Define key components in the README.md
-- Place all packages under pkg/
-- Place executables under cmd/
-- Documentation in docs/
-- Configuration in config/
-- Unit tests alongside the code they test
-- Integration tests in separate test/ directory
+- Place scenes under /scenes/
+- Organize scripts under /scripts/ or alongside their scenes
+- Store resources under /resources/
+- Place assets (textures, models, sounds) under /assets/
+- Store addons under /addons/
+- Place autoloads under /autoloads/ or /scripts/singletons/
+- Keep unit tests alongside the code they test
+- Place integration tests in a separate /tests/ directory
 
 ### Logging Best Practices
-- Use structured logging (e.g., logrus, zap)
-- Initialize package-level loggers
+
+- Use Godot's built-in print(), push_error(), and push_warning() functions
+- Consider using a custom logger for more complex projects
 - Use appropriate log levels (debug, info, warn, error)
 - Include context with log entries
-- When viewing logs:
-  - Always use --tail flag to limit log output
-  - Never use -f/--follow in scripts as these commands never return
-  - Recommended: kubectl logs pod-name --tail=100 (for K8s projects)
+- Use formatted strings for complex log messages
+- For debugging:
+  - Use the Godot debugger to inspect variables and state
+  - Add breakpoints at critical points in your code
+  - Use the remote debugger for deployed builds when necessary
 
 ### Documentation Standards
-- Document all exported functions, types, and packages
-- Use consistent formatting for godoc comments
+
+- Document all exported variables with descriptive hints
+- Document all signals and their parameters
+- Use docstrings for classes and methods
 - Include examples for complex functions
 - Keep README.md up to date with usage instructions
 - Document configuration options and their effects
 - Create CONTRIBUTING.md for collaboration guidelines
 
 ### Testing Requirements
-- Write tests for all packages
-- Maintain high test coverage for core logic
-- Use table-driven tests for multiple test cases
-- Mock external dependencies
-- Name tests using the TestFunctionName_Scenario convention
-- Add benchmarks for performance-critical code
+
+- Write tests for critical game systems
+- Consider using GUT (Godot Unit Testing) or another testing framework
+- Test both scripts and scenes
+- Use mock objects for external dependencies
+- Name tests descriptively
 - Include integration tests for end-to-end verification
+- Test on all target platforms regularly
 
 ### Error Handling
-- Always check error returns
-- Provide context when wrapping errors (e.g., fmt.Errorf("context: %w", err))
-- Use custom error types for domain-specific errors
+
+- Use Godot's error handling mechanisms
+- Implement proper error reporting
+- Use assert() for development-time validation
+- Consider custom error types for domain-specific errors
 - Include appropriate logging with error context
 - Return early on errors to avoid deep nesting
-- Consider implementing the error interface for custom error types
+- Handle unexpected conditions gracefully
 
 ### Performance Considerations
-- Use profiling tools for optimization
-- Benchmark before and after optimizations
-- Consider memory usage for large data structures
-- Use sync.Pool for frequently allocated objects
-- Implement worker pools for concurrent operations
-- Be aware of garbage collection impact
-- Consider using sync.Mutex for shared resources
+
+- Use object pooling for frequently instantiated objects
+- Implement proper resource management
+- Consider using multithreading for heavy operations
+- Profile your game regularly using Godot's profiling tools
+- Optimize rendering and physics operations
+- Be mindful of garbage collection impact
+- Use Godot's built-in optimization features (occlusion culling, LOD, etc.)
+- Consider using GDNative for performance-critical code
